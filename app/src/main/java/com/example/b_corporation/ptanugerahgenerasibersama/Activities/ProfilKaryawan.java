@@ -1,30 +1,25 @@
 package com.example.b_corporation.ptanugerahgenerasibersama.Activities;
 
 import android.content.Context;
-import android.database.Cursor;
 import android.os.Bundle;
 
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.b_corporation.ptanugerahgenerasibersama.Database.DatabaseAccess;
 import com.example.b_corporation.ptanugerahgenerasibersama.Model.Karyawan;
 import com.example.b_corporation.ptanugerahgenerasibersama.R;
 
 import java.util.List;
 
-/**
- * Created by B-Corporation on 4/28/2016.
- */
-public class Profil_karyawan extends AppCompatActivity {
+public class ProfilKaryawan extends AppCompatActivity {
     private ListView listViewkaryawan;
     private List<Karyawan> lkaryawan;
     private DatabaseAccess databaseAccess;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +28,6 @@ public class Profil_karyawan extends AppCompatActivity {
 
         this.listViewkaryawan = (ListView) findViewById(R.id.display_karyawan);
         this.databaseAccess = DatabaseAccess.getInstance(getApplicationContext());
-
     }
 
     private List<Karyawan> getKaryawan() {
@@ -42,6 +36,7 @@ public class Profil_karyawan extends AppCompatActivity {
         databaseAccess.close();
         return list;
     }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -67,6 +62,7 @@ public class Profil_karyawan extends AppCompatActivity {
             if (convertView == null) {
                 convertView = getLayoutInflater().inflate(R.layout.pk_row, parent, false);
             }
+
             TextView txtNo = (TextView) convertView.findViewById(R.id.t_no);
             TextView txtNama = (TextView) convertView.findViewById(R.id.t_nama);
             TextView txtJabatan = (TextView) convertView.findViewById(R.id.t_jbtn);
