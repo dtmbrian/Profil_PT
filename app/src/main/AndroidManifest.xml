@@ -30,7 +30,7 @@
 
         </activity>
         <activity
-            android:name=".Activities.History_proyek"
+            android:name=".Activities.HistoryProyek"
             android:label="History Proyek"
             android:screenOrientation="sensorLandscape"
             >
@@ -45,7 +45,7 @@
 
         </activity>
         <activity
-            android:name=".Activities.Profil_karyawan"
+            android:name=".Activities.ProfilKaryawan"
             android:label="Profil Karyawan" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -58,7 +58,7 @@
 
         </activity>
         <activity
-            android:name=".Activities.Profil_perusahaan"
+            android:name=".Activities.ProfilPerusahaan"
             android:label="Profil Perusahaan" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -71,7 +71,7 @@
 
         </activity>
         <activity
-            android:name=".Activities.Contact_us"
+            android:name=".Activities.ContactUs"
             android:label="Contact Us" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

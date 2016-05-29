@@ -2,9 +2,6 @@ package com.example.b_corporation.ptanugerahgenerasibersama.Model;
 
 import java.io.Serializable;
 
-/**
- * Created by B-Corporation on 5/13/2016.
- */
 public class Karyawan implements Serializable {
     private String no;
     private String namaKaryawan;
@@ -13,40 +10,51 @@ public class Karyawan implements Serializable {
     private String pengalamanProfesi;
     private String tanggalMasuk;
 
-    public String getNo(){
+    public String getNo() {
         return no;
     }
-    public void setNo(String no){
-        this.no=no;
+
+    public void setNo(String no) {
+        this.no = no;
     }
-    public String getNamaKaryawan(){
+
+    public String getNamaKaryawan() {
         return namaKaryawan;
     }
-    public void setNamaKaryawan(String namaKaryawan){
-        this.namaKaryawan=namaKaryawan;
+
+    public void setNamaKaryawan(String namaKaryawan) {
+        this.namaKaryawan = namaKaryawan;
     }
-    public String getJabatan(){
+
+    public String getJabatan() {
         return jabatan;
     }
-    public void setJabatan(String jabatan){
-        this.jabatan=jabatan;
+
+    public void setJabatan(String jabatan) {
+        this.jabatan = jabatan;
     }
-    public String getBidangKeahlian(){
+
+    public String getBidangKeahlian() {
         return bidangKeahlian;
     }
-    public void setBidangKeahlian(String bidangKeahlian){
-        this.bidangKeahlian=bidangKeahlian;
+
+    public void setBidangKeahlian(String bidangKeahlian) {
+        this.bidangKeahlian = bidangKeahlian;
     }
-    public String getPengalamanProfesi(){
+
+    public String getPengalamanProfesi() {
         return pengalamanProfesi;
     }
-    public void setPengalamanProfesi(String pengalamanProfesi){
-        this.pengalamanProfesi=pengalamanProfesi;
+
+    public void setPengalamanProfesi(String pengalamanProfesi) {
+        this.pengalamanProfesi = pengalamanProfesi;
     }
-    public String getTanggalMasuk(){
+
+    public String getTanggalMasuk() {
         return tanggalMasuk;
     }
-    public void setTanggalMasuk(String tanggalMasuk){
-        this.tanggalMasuk=tanggalMasuk;
+
+    public void setTanggalMasuk(String tanggalMasuk) {
+        this.tanggalMasuk = tanggalMasuk;
     }
 }

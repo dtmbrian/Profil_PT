@@ -3,19 +3,13 @@ package com.example.b_corporation.ptanugerahgenerasibersama.Activities;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 
 import com.example.b_corporation.ptanugerahgenerasibersama.Fragment.FragPilih;
 import com.example.b_corporation.ptanugerahgenerasibersama.R;
 
-/**
- * Created by B-Corporation on 5/25/2016.
- */
 public class PilihTampilProyek extends Activity {
     Button B1;
     @Override
@@ -33,12 +27,9 @@ public class PilihTampilProyek extends Activity {
                 FT.add(R.id.rel_frag, fragP);
                 FT.addToBackStack("fragP");
                 FT.commit();
-
             }
         });
-
     }
-
 
     @Override
     public void onBackPressed() {
