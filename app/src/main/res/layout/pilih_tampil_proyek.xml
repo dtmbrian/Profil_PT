@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/rel1">
+
+        <Button
+            android:layout_width="235dp"
+            android:layout_height="wrap_content"
+            android:text="Tampil Proyek Berdasarkan"
+            android:id="@+id/tmpl_brdsrkn"
+            android:layout_below="@+id/tmpl_foto"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="47dp" />
+
+        <Button
+            android:layout_width="235dp"
+            android:layout_height="wrap_content"
+            android:text="Foto Proyek"
+            android:id="@+id/tmpl_foto"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="56dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel_frag"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rel1"></RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="105dp">
+
+        <TextView
+            android:layout_width="80dp"
+            android:background="@drawable/my_drawable"
+            android:layout_height="45dp"
+            android:layout_marginTop="60dp"
+            android:text="BA SELESAI PEKERJAAN"
+            android:id="@+id/top_tsmbasp"
+            android:layout_toRightOf="@+id/top_tsmk"
+            android:gravity="center"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textStyle="bold"
+
+            />
+        <TextView
+            android:layout_width="70dp"
+            android:background="@drawable/my_drawable"
+            android:layout_height="45dp"
+            android:layout_marginTop="60dp"
+            android:text="KONTRAK"
+            android:id="@+id/top_tsmk"
+            android:layout_toRightOf="@+id/top_nrk"
+            android:gravity="center"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textStyle="bold"
+
+            />
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:text="TANGGGAL SELESAI MENURUT"
+            android:id="@+id/top_tsm"
+            android:layout_toRightOf="@+id/top_nrk"
+            android:gravity="center"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textStyle="bold"
+            android:background="@drawable/my_drawable"
+            />
+        <TextView
+            android:layout_width="85dp"
+            android:background="@drawable/my_drawable"
+            android:layout_height="45dp"
+            android:layout_marginTop="60dp"
+            android:text="NILAI RP"
+            android:id="@+id/top_nrk"
+            android:layout_toRightOf="@+id/top_ntk"
+            android:gravity="center"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textStyle="bold"
+
+            />
+        <TextView
+            android:layout_width="70dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/my_drawable"
+            android:layout_height="45dp"
+            android:text="NOMOR TANGGAL"
+            android:id="@+id/top_ntk"
+            android:layout_toRightOf="@+id/top_apt"
+            android:gravity="center"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textStyle="bold"
+
+            />
+        <TextView
+            android:layout_width="155dp"
+            android:layout_height="60dp"
+            android:text="KONTRAK"
+            android:id="@+id/top_kntrk"
+            android:layout_toRightOf="@+id/top_apt"
+            android:gravity="center"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textStyle="bold"
+            android:background="@drawable/my_drawable"
+            />
+
+        <TextView
+            android:layout_width="65dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="60dp"
+            android:text="ALAMAT"
+            android:id="@+id/top_apt"
+            android:layout_toRightOf="@+id/top_npt"
+            android:gravity="center"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textStyle="bold"
+            android:background="@drawable/my_drawable"
+
+            />
+
+        <TextView
+            android:layout_width="75dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="60dp"
+            android:text="NAMA"
+            android:id="@+id/top_npt"
+            android:layout_toRightOf="@+id/top_bidpek"
+            android:gravity="center"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textStyle="bold"
+            android:background="@drawable/my_drawable"
+            />
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:text="PEMBERI TUGAS/PEMBUAT KOMITMEN"
+            android:id="@+id/top_pt"
+            android:layout_toRightOf="@+id/top_bidpek"
+            android:gravity="center"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textStyle="bold"
+            android:background="@drawable/my_drawable"
+            />
+
+        <TextView
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:text="BIDANG PEKERJAAN"
+            android:id="@+id/top_bidpek"
+            android:layout_toRightOf="@+id/top_namaproy"
+            android:gravity="center"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textStyle="bold"
+            android:background="@drawable/my_drawable"
+            />
+
+        <TextView
+            android:layout_width="105dp"
+            android:layout_height="match_parent"
+            android:text="NAMA PEKERJAAN"
+            android:id="@+id/top_namaproy"
+            android:layout_toRightOf="@+id/top_noproy"
+            android:gravity="center"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textStyle="bold"
+            android:background="@drawable/my_drawable"
+            />
+
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:id="@+id/top_noproy"
+            android:text="NO"
+            android:layout_alignParentLeft="true"
+            android:gravity="center"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textStyle="bold"
+            android:background="@drawable/my_drawable"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="105dp">
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/display_proyek"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

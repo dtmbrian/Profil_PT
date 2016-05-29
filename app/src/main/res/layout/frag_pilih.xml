@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DCDCDC">
+
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:text="Nilai Proyek"
+        android:id="@+id/nilai_proyek"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentTop="true"
+android:gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:text="TAHUN PROYEK"
+        android:id="@+id/thn_proyek"
+        android:layout_below="@+id/nilai_proyek"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="30dp" />
+</RelativeLayout>
