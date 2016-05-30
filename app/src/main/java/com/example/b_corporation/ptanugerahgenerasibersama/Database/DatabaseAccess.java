@@ -90,7 +90,7 @@ public class DatabaseAccess {
         String query = "SELECT * FROM tbl_proyek";
         if (tahun != 0) {
             query = String.format("SELECT * FROM tbl_proyek " +
-                            "WHERE tgl_selesai_mnrt_kontrak BETWEEN '%d-01-01 AND '%d-12-31'",
+                            "WHERE tgl_selesai_mnrt_kontrak BETWEEN '%d-01-01' AND '%d-12-31'",
                     tahun, tahun
             );
         }
@@ -122,7 +122,7 @@ public class DatabaseAccess {
         String query = "SELECT * FROM tbl_proyek";
         if ((nilai1 != 0) & (nilai2 != 0)) {
             query = String.format("SELECT * FROM tbl_proyek " +
-                            "WHERE nilai_rp_kontrak BETWEEN '%d '%d'",
+                            "WHERE nilai_rp_kontrak BETWEEN '%d' And '%d'",
                     nilai1, nilai2
             );
         }

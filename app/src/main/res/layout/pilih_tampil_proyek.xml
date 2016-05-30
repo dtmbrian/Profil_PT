@@ -24,14 +24,25 @@
             android:layout_height="wrap_content"
             android:text="Foto Proyek"
             android:id="@+id/tmpl_foto"
+            android:onClick="displayFoto"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="56dp" />
+
+        <Button
+            android:layout_width="235dp"
+            android:layout_height="wrap_content"
+            android:text="Tampil Semua Proyek"
+            android:id="@+id/tmpl_semua"
+            android:layout_below="@+id/tmpl_foto"
+            android:layout_centerHorizontal="true" />
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/rel_frag"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/rel1"></RelativeLayout>
+        android:layout_below="@id/rel1">
+
+    </RelativeLayout>
 </RelativeLayout>

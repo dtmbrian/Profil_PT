@@ -17,11 +17,36 @@
         </activity>
         <activity
             android:name=".Activities.PilihTampilProyek"
-            android:label="History Proyek"
-            >
+            android:label="Pilih Tampil Proyek">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Activities.MainActivity" />
+            <intent-filter>
+                <action android:name="android.intent.action.DETAIL" />
+
+                <category android:name="android.intent.category.DETAIL" />
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".Activities.TampilFoto"
+            android:label="Galeri Foto">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.PilihTampilProyek" />
+            <intent-filter>
+                <action android:name="android.intent.action.DETAIL" />
+
+                <category android:name="android.intent.category.DETAIL" />
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".Activities.DetailFoto"
+            android:label="Preview Gambar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.TampilFoto" />
             <intent-filter>
                 <action android:name="android.intent.action.DETAIL" />
 

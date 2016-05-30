@@ -32,9 +32,23 @@ public class HistoryProyek extends AppCompatActivity {
 
     private List<Proyek> getProyektahun(int tahun) {
         databaseAccess.open();
-        List<Proyek> listproyek = databaseAccess.getProyektahun(tahun);
+        List<Proyek> listproyektahun = databaseAccess.getProyektahun(tahun);
+        databaseAccess.close();
+        return listproyektahun;
+    }
+
+    private List<Proyek> getProyek() {
+        databaseAccess.open();
+        List<Proyek> listproyek = databaseAccess.getProyek();
         databaseAccess.close();
         return listproyek;
+    }
+
+    private List<Proyek> getProyeknilai(int nilai1, int nilai2) {
+        databaseAccess.open();
+        List<Proyek> listproyeknilai = databaseAccess.getProyeknilai(nilai1, nilai2);
+        databaseAccess.close();
+        return listproyeknilai;
     }
 
     @Override
@@ -46,11 +60,26 @@ public class HistoryProyek extends AppCompatActivity {
     private void updateListView() {
 
         String flag = String.valueOf(getIntent().getStringExtra("Flag"));
-        int tahun = Integer.parseInt(flag);
+        String nilaiMin = String.valueOf(getIntent().getStringExtra("nilaiMin"));
+        String nilaiMax = String.valueOf(getIntent().getStringExtra("nilaiMax"));
+        if (flag.equalsIgnoreCase("all")) {
+            this.lproyek = getProyek();
+            ProyekAdapter adapter = new ProyekAdapter(this, lproyek);
+            listViewproyek.setAdapter(adapter);
+        }
+        if (flag.equalsIgnoreCase("nilai")) {
+            int nilai1 = Integer.parseInt(nilaiMin);
+            int nilai2 = Integer.parseInt(nilaiMax);
+            this.lproyek = getProyeknilai(nilai1, nilai2);
+            ProyekAdapter adapter = new ProyekAdapter(this, lproyek);
+            listViewproyek.setAdapter(adapter);
+        } else {
+            int tahun = Integer.parseInt(flag);
+            this.lproyek = getProyektahun(tahun);
+            ProyekAdapter adapter = new ProyekAdapter(this, lproyek);
+            listViewproyek.setAdapter(adapter);
+        }
 
-        lproyek = getProyektahun(tahun);
-        ProyekAdapter adapter = new ProyekAdapter(this, lproyek);
-        listViewproyek.setAdapter(adapter);
     }
 
     private class ProyekAdapter extends ArrayAdapter<Proyek> {
