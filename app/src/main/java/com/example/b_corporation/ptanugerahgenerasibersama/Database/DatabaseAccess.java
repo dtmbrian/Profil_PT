@@ -60,9 +60,9 @@ public class DatabaseAccess {
         return listKaryawan;
     }
 
-    public List<Proyek> getProyek(int tahun) {
-        List<Proyek> listProyek = new ArrayList<>();
 
+    public List<Proyek> getProyektahun(int tahun) {
+        List<Proyek> listProyekTahun = new ArrayList<>();
         String query = "SELECT * FROM tbl_proyek";
         if (tahun != 0) {
             query = String.format("SELECT * FROM tbl_proyek " +
@@ -85,11 +85,43 @@ public class DatabaseAccess {
             proyek.setNilaiRpKontrak(cursor.getString(6));
             proyek.setTglSelesaiMnrtKontrak(cursor.getString(7));
             proyek.setTglSelesaiMnrtBaSp(cursor.getString(8));
-            listProyek.add(proyek);
+            listProyekTahun.add(proyek);
             cursor.moveToNext();
         }
 
         cursor.close();
-        return listProyek;
+        return listProyekTahun;
+    }
+
+    public List<Proyek> getProyeknilai(int nilai1, int nilai2) {
+        List<Proyek> listProyekNilai = new ArrayList<>();
+        String query = "SELECT * FROM tbl_proyek";
+        if ((nilai1 != 0) & (nilai2 != 0)) {
+            query = String.format("SELECT * FROM tbl_proyek " +
+                            "WHERE nilai_rp_kontrak BETWEEN '%d '%d'",
+                    nilai1, nilai2
+            );
+        }
+
+        Cursor cursor = database.rawQuery(query, null);
+        cursor.moveToFirst();
+
+        while (!cursor.isAfterLast()) {
+            Proyek proyek = new Proyek();
+            proyek.setNoProy(cursor.getString(0));
+            proyek.setNamaPekerjaan(cursor.getString(1));
+            proyek.setBidangPekerjaan(cursor.getString(2));
+            proyek.setNamaPemberiTgs(cursor.getString(3));
+            proyek.setAlamatPemberiTgs(cursor.getString(4));
+            proyek.setNmrTglKontrak(cursor.getString(5));
+            proyek.setNilaiRpKontrak(cursor.getString(6));
+            proyek.setTglSelesaiMnrtKontrak(cursor.getString(7));
+            proyek.setTglSelesaiMnrtBaSp(cursor.getString(8));
+            listProyekNilai.add(proyek);
+            cursor.moveToNext();
+        }
+
+        cursor.close();
+        return listProyekNilai;
     }
 }

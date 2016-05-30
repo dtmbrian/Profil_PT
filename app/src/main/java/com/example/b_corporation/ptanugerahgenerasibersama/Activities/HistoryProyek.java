@@ -44,6 +44,7 @@ public class HistoryProyek extends AppCompatActivity {
     }
 
     private void updateListView() {
+
         String flag = String.valueOf(getIntent().getStringExtra("Flag"));
         int tahun = Integer.parseInt(flag);
 
