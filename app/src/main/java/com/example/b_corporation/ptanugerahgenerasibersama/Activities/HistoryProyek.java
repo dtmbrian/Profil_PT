@@ -66,18 +66,19 @@ public class HistoryProyek extends AppCompatActivity {
             this.lproyek = getProyek();
             ProyekAdapter adapter = new ProyekAdapter(this, lproyek);
             listViewproyek.setAdapter(adapter);
-        }
-        if (flag.equalsIgnoreCase("nilai")) {
-            int nilai1 = Integer.parseInt(nilaiMin);
-            int nilai2 = Integer.parseInt(nilaiMax);
-            this.lproyek = getProyeknilai(nilai1, nilai2);
-            ProyekAdapter adapter = new ProyekAdapter(this, lproyek);
-            listViewproyek.setAdapter(adapter);
         } else {
-            int tahun = Integer.parseInt(flag);
-            this.lproyek = getProyektahun(tahun);
-            ProyekAdapter adapter = new ProyekAdapter(this, lproyek);
-            listViewproyek.setAdapter(adapter);
+            if (flag.equalsIgnoreCase("nilai")) {
+                int nilai1 = Integer.parseInt(nilaiMin);
+                int nilai2 = Integer.parseInt(nilaiMax);
+                this.lproyek = getProyeknilai(nilai1, nilai2);
+                ProyekAdapter adapter = new ProyekAdapter(this, lproyek);
+                listViewproyek.setAdapter(adapter);
+            } else {
+                int tahun = Integer.parseInt(flag);
+                this.lproyek = getProyektahun(tahun);
+                ProyekAdapter adapter = new ProyekAdapter(this, lproyek);
+                listViewproyek.setAdapter(adapter);
+            }
         }
 
     }
