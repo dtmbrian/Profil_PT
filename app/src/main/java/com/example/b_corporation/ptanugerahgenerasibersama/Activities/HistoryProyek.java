@@ -30,9 +30,9 @@ public class HistoryProyek extends AppCompatActivity {
 
     }
 
-    private List<Proyek> getProyek(int tahun) {
+    private List<Proyek> getProyektahun(int tahun) {
         databaseAccess.open();
-        List<Proyek> listproyek = databaseAccess.getProyek(tahun);
+        List<Proyek> listproyek = databaseAccess.getProyektahun(tahun);
         databaseAccess.close();
         return listproyek;
     }
@@ -48,7 +48,7 @@ public class HistoryProyek extends AppCompatActivity {
         String flag = String.valueOf(getIntent().getStringExtra("Flag"));
         int tahun = Integer.parseInt(flag);
 
-        lproyek = getProyek(tahun);
+        lproyek = getProyektahun(tahun);
         ProyekAdapter adapter = new ProyekAdapter(this, lproyek);
         listViewproyek.setAdapter(adapter);
     }

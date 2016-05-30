@@ -60,6 +60,30 @@ public class DatabaseAccess {
         return listKaryawan;
     }
 
+    public List<Proyek> getProyek() {
+        List<Proyek> listProyek = new ArrayList<>();
+        Cursor cursor = database.rawQuery("SELECT * FROM tbl_proyek", null);
+        cursor.moveToFirst();
+
+        while (!cursor.isAfterLast()) {
+            Proyek proyek = new Proyek();
+            proyek.setNoProy(cursor.getString(0));
+            proyek.setNamaPekerjaan(cursor.getString(1));
+            proyek.setBidangPekerjaan(cursor.getString(2));
+            proyek.setNamaPemberiTgs(cursor.getString(3));
+            proyek.setAlamatPemberiTgs(cursor.getString(4));
+            proyek.setNmrTglKontrak(cursor.getString(5));
+            proyek.setNilaiRpKontrak(cursor.getString(6));
+            proyek.setTglSelesaiMnrtKontrak(cursor.getString(7));
+            proyek.setTglSelesaiMnrtBaSp(cursor.getString(8));
+            listProyek.add(proyek);
+            cursor.moveToNext();
+        }
+
+        cursor.close();
+        return listProyek;
+    }
+
 
     public List<Proyek> getProyektahun(int tahun) {
         List<Proyek> listProyekTahun = new ArrayList<>();
