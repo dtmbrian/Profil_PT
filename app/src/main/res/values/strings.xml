@@ -18,15 +18,26 @@
         <item>2004</item>
     </string-array>
     <string-array name="image_ids">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
+        <item>@drawable/gambar1</item>
+        <item>@drawable/gambar2</item>
+        <item>@drawable/gambar3</item>
+        <item>@drawable/gambar4</item>
+        <item>@drawable/gambar5</item>
+        <item>@drawable/gambar6</item>
+        <item>@drawable/gambar7</item>
+        <item>@drawable/gambar8</item>
+        <item>@drawable/gambar9</item>
+        <item>@drawable/gambar10</item>
+        <item>@drawable/gambar11</item>
+        <item>@drawable/gambar12</item>
+        <item>@drawable/gambar13</item>
+        <item>@drawable/gambar14</item>
+        <item>@drawable/gambar15</item>
+        <item>@drawable/gambar16</item>
+        <item>@drawable/gambar17</item>
+        <item>@drawable/gambar18</item>
+        <item>@drawable/gambar19</item>
+        <item>@drawable/gambar20</item>
     </string-array>
     <string name="textlatar"><b>Latar Belakang</b> \n\nProses pembangunan mencakup berbagai aspek dan dimensi, melibatkan bermacam pihak dan jenis partisipan, sehingga terjadi suatu sistem yang kompleks dan tidak mungkin ditangani oleh satu pihak saja.\n\nKarena Itu, diperlukan adanya jasa profesional dari swasta yang juga memahami seluk beluk sistem pembangunan dan mampu menawarkan jalan keluar problem (solving) terhadap masalah yang akan timbul dalam masa pelaksanaan nantinya.\n\nUntuk itu kami PT. Anugerah Generasi Bersama yang didirikan dengan Akta Nurul Yayuk Andayani, S.H.  Nomor : 30  Tanggal 20 Januari 2012 di Palangka Raya, merupakan suatu perusahaan swasta  jasa konsultan  yang siap membantu pengelolaan kegiatan pembangunan didaerah ini dan kesiapan menghadapi AFTA yang mulai diberlakukan tahun 2012.\n\nSejalan dengan tuntutan akan keperluan jasa konsultan, PT. Anugerah Generasi Bersama dalam mengembangkan diri untuk melayani kebutuhan layanan JASA KONSULTAN yang mencakup bidang-bisang sebagai berikut:\n1. Bidang Arsitektur \n2. Bidang Sipil \n3. Bidang Tata Lingkungan \n4. Bidang Pengawasan \n\nKeberadaan perusahaan ini tentunya didukung oleh tenaga-tenaga ahli teknik yang berpengalaman dan profesional dibidangnya, serta peralatan penunjang yang mampu mendukung kerja profesional tersebut. Sebagai suatu perusahaan JASA KONSULTAN. Klasifikasi dan kualifikasi dari PT. ANUGERAH GENERASI BERSAMA diakui oleh badan dn organisasi asosiasi profesi tingkat nasional/daerah, yakni INKINDO, KADIN, LPJKN/BSN-UJK.
     \n\n\n<b>Visi dan Misi</b>\n\nTugas utama perusahaan jasa konsultasi adalah memberikan dan menjaga Quality Assurance, sejak mulai penyiapan data/bahan, pengolahan sampai masa produk akhir. \n\nUntuk maksud iniah kami menawarkan perusahaan PT. ANUGERAH GENERASI BERSAMA supaya dapat diikutsertakan dan dapat diberikan kesempatan berperan aktif dalam pembangan di wilayah atau daerah ini. \n\nPerusahaan ini mampu memberikan komprehesif yang meliputi Project Cycles yaitu : Survey, Pengukuran, Manajemen Proyek Konstruksi , Studi Penelitian Kelayakan Evaluasi, Perencanaan dan Pengawasan Teknis.\n\nKeberhasilan perusahaan kami dalam menangani suatu pekerjaan tidak lepas dari pemberian kesempatan dan kepercayaan yang telah diberikan oleh pemberi proyek.</string>

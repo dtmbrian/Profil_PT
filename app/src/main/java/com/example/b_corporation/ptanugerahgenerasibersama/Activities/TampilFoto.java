@@ -1,8 +1,10 @@
 package com.example.b_corporation.ptanugerahgenerasibersama.Activities;
 
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.content.res.TypedArray;
@@ -27,6 +29,7 @@ public class TampilFoto extends AppCompatActivity {
     private GridView gridView;
     private GridViewAdapter gridAdapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,8 +45,12 @@ public class TampilFoto extends AppCompatActivity {
 
                 //Create intent
                 Intent intent = new Intent(getApplication(), DetailFoto.class);
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                Bitmap bitmap = item.getImage();
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                byte[] bytes = stream.toByteArray();
                 intent.putExtra("title", item.getTitle());
-                intent.putExtra("image", item.getImage());
+                intent.putExtra("image", bytes);
 
                 //Start details activity
                 startActivity(intent);
@@ -59,8 +66,21 @@ public class TampilFoto extends AppCompatActivity {
         TypedArray imgs = getResources().obtainTypedArray(R.array.image_ids);
         for (int i = 0; i < imgs.length(); i++) {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i, -1));
-            imageItems.add(new ImageItem(bitmap, "Image#" + i));
+            Bitmap bitmaps = scaleDownBitmap(bitmap, 100, getApplicationContext());
+            imageItems.add(new ImageItem(bitmaps, "foto proyek " + (i + 1)));
         }
         return imageItems;
+    }
+
+    public static Bitmap scaleDownBitmap(Bitmap photo, int newHeight, Context context) {
+
+        final float densityMultiplier = context.getResources().getDisplayMetrics().density;
+
+        int h = (int) (newHeight * densityMultiplier);
+        int w = (int) (h * photo.getWidth() / ((double) photo.getHeight()));
+
+        photo = Bitmap.createScaledBitmap(photo, w, h, true);
+
+        return photo;
     }
 }

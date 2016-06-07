@@ -4,6 +4,7 @@ package com.example.b_corporation.ptanugerahgenerasibersama.Model;
  * Created by B-Corporation on 5/30/2016.
  */
 
+import android.content.Context;
 import android.graphics.Bitmap;
 
 public class ImageItem {
@@ -28,7 +29,5 @@ public class ImageItem {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+
 }
