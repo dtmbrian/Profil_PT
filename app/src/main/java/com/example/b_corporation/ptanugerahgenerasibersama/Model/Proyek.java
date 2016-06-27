@@ -1,9 +1,11 @@
 package com.example.b_corporation.ptanugerahgenerasibersama.Model;
 
+import android.content.Context;
+
 import java.io.Serializable;
 
-public class Proyek implements Serializable {
-    private String noProy;
+public class Proyek {
+    private Integer noProy;
     private String namaPekerjaan;
     private String bidangPekerjaan;
     private String namaPemberiTgs;
@@ -12,13 +14,18 @@ public class Proyek implements Serializable {
     private String nilaiRpKontrak;
     private String tglSelesaiMnrtKontrak;
     private String tglSelesaiMnrtBaSp;
-    private String tmplThn;
+    Context c;
 
-    public String getNoProy() {
+
+    public Proyek() {
+
+    }
+
+    public Integer getNoProy() {
         return noProy;
     }
 
-    public void setNoProy(String noProy) {
+    public void setNoProy(Integer noProy) {
         this.noProy = noProy;
     }
 
@@ -30,13 +37,7 @@ public class Proyek implements Serializable {
         this.namaPekerjaan = namaPekerjaan;
     }
 
-    public String getTmplThn() {
-        return namaPekerjaan;
-    }
 
-    public void setTmplThn(String tmplThn) {
-        this.tmplThn = tmplThn;
-    }
 
     public String getBidangPekerjaan() {
         return bidangPekerjaan;

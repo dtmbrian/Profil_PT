@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    card_view:cardCornerRadius="10dp"
+    card_view:cardElevation="5dp"
+    android:layout_width="500dp"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/no_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/noEdtext"
+                    android:hint="No" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/nama_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/namaEdtext"
+                    android:hint="Nama Proyek" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/bp_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bpEdtext"
+                    android:hint="Bidang Pekerjaan" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/nmPT_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nmPtEdtext"
+                    android:hint="Nama Pemberi Tugas" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/alamatPT_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/almtPtEdtext"
+                    android:hint="Alamat Pemberi Tugas" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/nmrTgl_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nmrTglEdtext"
+                    android:hint="Nomor Tanggal Kontak" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/nilaiRP_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nilaiRpEdtext"
+                    android:hint="Nilai RP Kontrak" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/tglselesaikontrak_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tglselesaikontrakEdtext"
+                    android:hint="Tanggal Selesai Menurut Kontrak" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/tglselesaibasp_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tglselesaibaspEdtext"
+                    android:hint="Tanggal Selesai Menurut BASP" />
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnsimpan"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Simpan"
+                android:clickable="true"
+                android:background="@color/colorAccent"
+                android:layout_marginTop="50dp"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btnReload"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Muat Ulang"
+                android:clickable="true"
+                android:background="@color/colorAccent"
+                android:layout_marginTop="5dp"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </ScrollView>
+</android.support.v7.widget.CardView>

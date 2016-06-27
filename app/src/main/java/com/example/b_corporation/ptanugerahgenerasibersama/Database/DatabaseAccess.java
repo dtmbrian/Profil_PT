@@ -1,7 +1,9 @@
 package com.example.b_corporation.ptanugerahgenerasibersama.Database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -10,6 +12,7 @@ import com.example.b_corporation.ptanugerahgenerasibersama.Model.Karyawan;
 import com.example.b_corporation.ptanugerahgenerasibersama.Model.Proyek;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,9 +20,14 @@ public class DatabaseAccess {
     private SQLiteOpenHelper openHelper;
     private SQLiteDatabase database;
     private static DatabaseAccess instance;
+    DatabaseOpenHelper mDbHelper;
+    Context c;
 
-    private DatabaseAccess(Context context) {
-        this.openHelper = new DatabaseOpenHelper(context);
+    public DatabaseAccess(Context c) {
+
+        this.c = c;
+        mDbHelper = new DatabaseOpenHelper(c);
+
     }
 
     public static DatabaseAccess getInstance(Context context) {
@@ -30,7 +38,26 @@ public class DatabaseAccess {
     }
 
     public void open() {
-        this.database = openHelper.getWritableDatabase();
+
+
+        try {
+            database = mDbHelper.createDataBase();
+
+        } catch (IOException ioe) {
+
+            throw new RuntimeException("Unable to create database");
+
+        }
+
+        try {
+
+            database = mDbHelper.openDataBase();
+
+        } catch (SQLException sqle) {
+
+            throw sqle;
+
+        }
     }
 
     public void close() {
@@ -39,6 +66,71 @@ public class DatabaseAccess {
         }
     }
 
+    public Boolean add(String noProy, String namaPekerjaan, String bidangPekerjaan, String namaPemberiTgs, String alamatPemberiTugas, String nomorTglKontrak, String nilaiRpKontrak, String tglSelesaiMenurutKontrak, String tglSelesaiMenurutBasp) {
+        try {
+            ContentValues cv = new ContentValues();
+            cv.put(Constant.ROW_ID, noProy);
+            cv.put(Constant.NAMA_PEKERJAAN, namaPekerjaan);
+            cv.put(Constant.BIDANG_PEKERJAAN, bidangPekerjaan);
+            cv.put(Constant.NAMA_PEMBERI_TUGAS, namaPemberiTgs);
+            cv.put(Constant.ALAMAT_PEMBERI_TUGAS, alamatPemberiTugas);
+            cv.put(Constant.NOMOR_TGL_KONTRAK, nomorTglKontrak);
+            cv.put(Constant.NILAI_RP_KONTRAK, nilaiRpKontrak);
+            cv.put(Constant.TANGGAL_SELESAI_MENURUT_KONTRAK, tglSelesaiMenurutKontrak);
+            cv.put(Constant.TANGGAL_SELESAI_MENURUT_BASP, tglSelesaiMenurutBasp);
+
+            long result = database.insert(DatabaseOpenHelper.TB_Name, Constant.ROW_ID, cv);
+            if (result > 0) {
+                return true;
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public Cursor retrieve() {
+        String[] columns = {Constant.ROW_ID, Constant.NAMA_PEKERJAAN, Constant.BIDANG_PEKERJAAN, Constant.NAMA_PEMBERI_TUGAS, Constant.ALAMAT_PEMBERI_TUGAS, Constant.NOMOR_TGL_KONTRAK, Constant.NILAI_RP_KONTRAK, Constant.TANGGAL_SELESAI_MENURUT_KONTRAK, Constant.TANGGAL_SELESAI_MENURUT_BASP};
+        Cursor c = database.query(DatabaseOpenHelper.TB_Name, columns, null, null, null, null, null);
+        return c;
+    }
+
+    public boolean update(String newNoProy, String newNamaPekerjaan, String newBidangPekerjaan, String newNamaPemberiTgs, String newAlamatPemberiTugas, String newNomorTglKontrak, String newNilaiRpKontrak, String newTglSelesaiMenurutKontrak, String newTglSelesaiMenurutBasp, int noProy1) {
+        try {
+            ContentValues cv = new ContentValues();
+            cv.put(Constant.ROW_ID, newNoProy);
+            cv.put(Constant.BIDANG_PEKERJAAN, newBidangPekerjaan);
+            cv.put(Constant.NAMA_PEMBERI_TUGAS, newNamaPemberiTgs);
+            cv.put(Constant.ALAMAT_PEMBERI_TUGAS, newAlamatPemberiTugas);
+            cv.put(Constant.NOMOR_TGL_KONTRAK, newNomorTglKontrak);
+            cv.put(Constant.NILAI_RP_KONTRAK, newNilaiRpKontrak);
+            cv.put(Constant.TANGGAL_SELESAI_MENURUT_KONTRAK, newTglSelesaiMenurutKontrak);
+            cv.put(Constant.TANGGAL_SELESAI_MENURUT_BASP, newTglSelesaiMenurutBasp);
+            cv.put(Constant.NAMA_PEKERJAAN, newNamaPekerjaan);
+
+            int result = database.update(DatabaseOpenHelper.TB_Name, cv, Constant.ROW_ID + "=?", new String[]{String.valueOf(noProy1)});
+            if (result > 0) {
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean delete(int noProy) {
+        try {
+            int result = database.delete(DatabaseOpenHelper.TB_Name, Constant.ROW_ID + "=?", new String[]{String.valueOf(noProy)});
+            if (result > 0) {
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
     public List<Karyawan> getKaryawan() {
         List<Karyawan> listKaryawan = new ArrayList<>();
         Cursor cursor = database.rawQuery("SELECT * FROM tbl_karyawan", null);
@@ -67,7 +159,7 @@ public class DatabaseAccess {
 
         while (!cursor.isAfterLast()) {
             Proyek proyek = new Proyek();
-            proyek.setNoProy(cursor.getString(0));
+            proyek.setNoProy(cursor.getInt(0));
             proyek.setNamaPekerjaan(cursor.getString(1));
             proyek.setBidangPekerjaan(cursor.getString(2));
             proyek.setNamaPemberiTgs(cursor.getString(3));
@@ -100,7 +192,7 @@ public class DatabaseAccess {
 
         while (!cursor.isAfterLast()) {
             Proyek proyek = new Proyek();
-            proyek.setNoProy(cursor.getString(0));
+            proyek.setNoProy(cursor.getInt(0));
             proyek.setNamaPekerjaan(cursor.getString(1));
             proyek.setBidangPekerjaan(cursor.getString(2));
             proyek.setNamaPemberiTgs(cursor.getString(3));
@@ -132,7 +224,7 @@ public class DatabaseAccess {
 
         while (!cursor.isAfterLast()) {
             Proyek proyek = new Proyek();
-            proyek.setNoProy(cursor.getString(0));
+            proyek.setNoProy(cursor.getInt(0));
             proyek.setNamaPekerjaan(cursor.getString(1));
             proyek.setBidangPekerjaan(cursor.getString(2));
             proyek.setNamaPemberiTgs(cursor.getString(3));
